@@ -45,6 +45,19 @@ a:visited { color: #888; }
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .bg-video {
+    display: none;
+  }
+  
+  body {
+    background-image: url('Website_Background.png'), repeating-linear-gradient(0deg,transparent,transparent 1px,rgba(0,0,0,0.15) 1px,rgba(0,0,0,0.15) 2px);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
 .outer-table { width: 100%; max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
 
 .header-cell {
