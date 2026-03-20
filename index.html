@@ -304,6 +304,219 @@ a:visited { color: #888; }
   display: block;
 }
 
+.support-box {
+  padding: 14px 12px;
+}
+
+.support-button {
+  display: block;
+  width: 100%;
+  color: #a0a0a0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  border: 2px solid #a0a0a0;
+  padding: 10px 14px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 4px rgba(160, 160, 160, 0.3);
+  transition: all 0.2s ease;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.support-button:hover {
+  color: #000000;
+  background: #a0a0a0;
+  box-shadow: 0 0 6px rgba(160, 160, 160, 0.4);
+}
+
+/* Donation Modal */
+#donate-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+#donate-modal.active {
+  display: flex;
+}
+
+.donate-modal-content {
+  background: #000;
+  border: 2px solid #666;
+  border-top-color: #888;
+  border-left-color: #888;
+  border-bottom-color: #111;
+  border-right-color: #111;
+  box-shadow: 0 0 0 1px #000, 0 6px 24px rgba(0,0,0,0.9), inset 0 1px 0 rgba(255,255,255,0.12);
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.donate-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #1e1e1e;
+  padding-bottom: 12px;
+}
+
+.donate-modal-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.donate-modal-close {
+  background: none;
+  border: 2px solid #666;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.donate-modal-close:hover {
+  color: #fff;
+  border-color: #aaa;
+}
+
+.donate-amount-label {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.donate-amounts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .donate-amounts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.donate-amount-btn {
+  background: transparent;
+  border: 2px solid #555;
+  color: #a0a0a0;
+  padding: 12px 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.donate-amount-btn:hover,
+.donate-amount-btn.selected {
+  border-color: #a0a0a0;
+  color: #fff;
+  box-shadow: 0 0 4px rgba(160, 160, 160, 0.3);
+}
+
+.donate-custom-section {
+  margin-bottom: 20px;
+}
+
+.donate-custom-input {
+  width: 100%;
+  background: #0a0a0a;
+  border: 2px solid #555;
+  color: #a0a0a0;
+  padding: 10px 12px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.donate-custom-input:focus {
+  outline: none;
+  border-color: #a0a0a0;
+  color: #fff;
+}
+
+.donate-message-section {
+  margin-bottom: 20px;
+}
+
+.donate-message-label {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.donate-message-textarea {
+  width: 100%;
+  background: #0a0a0a;
+  border: 2px solid #555;
+  color: #a0a0a0;
+  padding: 10px 12px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+
+.donate-message-textarea:focus {
+  outline: none;
+  border-color: #a0a0a0;
+  color: #fff;
+}
+
+.donate-paypal-btn {
+  width: 100%;
+  background: linear-gradient(180deg, #0070ba 0%, #005ea6 100%);
+  border: none;
+  color: #fff;
+  padding: 14px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.donate-paypal-btn:hover {
+  background: linear-gradient(180deg, #005ea6 0%, #004c96 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
 .footer {
   border-top: 1px solid #1e1e1e;
   margin-top: 28px;
@@ -494,6 +707,12 @@ a:visited { color: #888; }
       </div>
 
       <div class="sidebar-block">
+        <div class="support-box">
+          <button id="donate-btn" class="support-button">Donate</button>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
         <div class="counter-block">
           <div class="counter-digits" id="visitor-count">000142</div>
           <span class="counter-label">visitors</span>
@@ -505,6 +724,40 @@ a:visited { color: #888; }
 
   <div class="footer">
     <p>&copy; 2026 XW VIDEO</p>
+  </div>
+
+  <!-- Donation Modal -->
+  <div id="donate-modal">
+    <div class="donate-modal-content">
+      <div class="donate-modal-header">
+        <span class="donate-modal-title">Support XW Video</span>
+        <button class="donate-modal-close" id="donate-close">✕</button>
+      </div>
+
+      <label class="donate-amount-label">Tip (in $ USD)</label>
+      <div class="donate-amounts">
+        <button class="donate-amount-btn" data-amount="2">$2</button>
+        <button class="donate-amount-btn" data-amount="5">$5</button>
+        <button class="donate-amount-btn" data-amount="10">$10</button>
+        <button class="donate-amount-btn" data-amount="20">$20</button>
+        <button class="donate-amount-btn" data-amount="50">$50</button>
+        <button class="donate-amount-btn" data-amount="custom">Custom</button>
+      </div>
+
+      <div class="donate-custom-section" style="display: none;" id="donate-custom-section">
+        <input type="number" class="donate-custom-input" id="donate-custom-amount" placeholder="Enter amount in USD" min="1" step="0.01">
+      </div>
+
+      <label class="donate-message-label">Your message (optional)</label>
+      <textarea class="donate-message-textarea" id="donate-message" placeholder="Leave a message (optional)"></textarea>
+
+      <form id="donate-form" method="POST" action="https://www.paypal.com/donate" style="margin-top: 20px;">
+        <input type="hidden" name="hosted_button_id" value="98VA6SQLUT44U">
+        <input type="hidden" name="amount" id="donate-amount-input" value="">
+        <input type="hidden" name="item_name" id="donate-item-name" value="">
+        <button type="submit" class="donate-paypal-btn">Donate via PayPal</button>
+      </form>
+    </div>
   </div>
 
 </div>
@@ -535,6 +788,88 @@ window.addEventListener('load', () => {
         });
     }
   }
+  
+  // Global visitor counter using Countapi
+  const counterElement = document.getElementById('visitor-count');
+  if (counterElement) {
+    fetch('https://api.countapi.xyz/hit/xwvideo.com/visitors')
+      .then(response => response.json())
+      .then(data => {
+        counterElement.textContent = String(data.value).padStart(6, '0');
+      })
+      .catch(err => {
+        console.log('Counter unavailable, showing fallback');
+        counterElement.textContent = '000000';
+      });
+  }
+
+  // Donation modal functionality
+  const donateBtn = document.getElementById('donate-btn');
+  const donateModal = document.getElementById('donate-modal');
+  const donateClose = document.getElementById('donate-close');
+  const donateAmountBtns = document.querySelectorAll('.donate-amount-btn');
+  const donateCustomSection = document.getElementById('donate-custom-section');
+  const donateCustomAmount = document.getElementById('donate-custom-amount');
+  const donateMessage = document.getElementById('donate-message');
+  const donateForm = document.getElementById('donate-form');
+  const donateAmountInput = document.getElementById('donate-amount-input');
+  const donateItemName = document.getElementById('donate-item-name');
+
+  let selectedAmount = null;
+
+  donateBtn.addEventListener('click', () => {
+    donateModal.classList.add('active');
+  });
+
+  donateClose.addEventListener('click', () => {
+    donateModal.classList.remove('active');
+  });
+
+  donateModal.addEventListener('click', (e) => {
+    if (e.target === donateModal) {
+      donateModal.classList.remove('active');
+    }
+  });
+
+  donateAmountBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      donateAmountBtns.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      
+      const amount = btn.dataset.amount;
+      
+      if (amount === 'custom') {
+        donateCustomSection.style.display = 'block';
+        donateCustomAmount.focus();
+        selectedAmount = null;
+      } else {
+        donateCustomSection.style.display = 'none';
+        selectedAmount = amount;
+      }
+    });
+  });
+
+  donateCustomAmount.addEventListener('input', () => {
+    if (donateCustomAmount.value) {
+      selectedAmount = donateCustomAmount.value;
+    }
+  });
+
+  donateForm.addEventListener('submit', (e) => {
+    if (!selectedAmount) {
+      e.preventDefault();
+      alert('Please select or enter an amount');
+      return;
+    }
+    
+    donateAmountInput.value = selectedAmount;
+    const message = donateMessage.value;
+    if (message) {
+      donateItemName.value = `Donation: ${message}`;
+    } else {
+      donateItemName.value = 'Donation to XW Video';
+    }
+  });
 });
 </script>
 
