@@ -110,11 +110,11 @@ a:visited { color: #888; }
 
 .nav-bar {
   background: #000000;
-  border-top: 1px solid #1e1e1e;
-  border-bottom: 1px solid #1e1e1e;
-  padding: 12px 0;
+  border: 1px solid #1e1e1e;
+  padding: 20px 0;
   text-align: center;
   margin: 15px 0;
+  min-height: 40px;
 }
 
 .nav-bar a {
@@ -797,18 +797,13 @@ window.addEventListener('load', () => {
     }
   }
   
-  // Global visitor counter using Countapi
+  // Visitor counter using localStorage
   const counterElement = document.getElementById('visitor-count');
   if (counterElement) {
-    fetch('https://api.countapi.xyz/hit/xwvideo.com/visitors')
-      .then(response => response.json())
-      .then(data => {
-        counterElement.textContent = String(data.value).padStart(6, '0');
-      })
-      .catch(err => {
-        console.log('Counter unavailable, showing fallback');
-        counterElement.textContent = '000000';
-      });
+    let visitCount = parseInt(localStorage.getItem('xw-visitor-count') || '911');
+    visitCount++;
+    localStorage.setItem('xw-visitor-count', visitCount);
+    counterElement.textContent = String(visitCount).padStart(6, '0');
   }
 
   // Donation modal functionality
