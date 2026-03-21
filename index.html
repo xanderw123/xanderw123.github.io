@@ -797,13 +797,19 @@ window.addEventListener('load', () => {
     }
   }
   
-  // Visitor counter using localStorage
+  // Visitor counter using localStorage with mobile fallback
   const counterElement = document.getElementById('visitor-count');
   if (counterElement) {
-    let visitCount = parseInt(localStorage.getItem('xw-visitor-count') || '911');
-    visitCount++;
-    localStorage.setItem('xw-visitor-count', visitCount);
-    counterElement.textContent = String(visitCount).padStart(6, '0');
+    try {
+      let visitCount = parseInt(localStorage.getItem('xw-visitor-count') || '911');
+      visitCount++;
+      localStorage.setItem('xw-visitor-count', visitCount);
+      counterElement.textContent = String(visitCount).padStart(6, '0');
+    } catch (e) {
+      // localStorage not available (mobile in private mode, etc)
+      // Just show a static number
+      counterElement.textContent = '000911';
+    }
   }
 
   // Donation modal functionality
